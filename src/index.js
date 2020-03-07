@@ -87,6 +87,84 @@ function Word(props) {
     )
 }
 
+class Man extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            progress: this.props.progress,
+        };
+    }
+
+    renderHead() {
+        if (this.props.progress >= 1) {
+            return (<div class="circle"></div>);
+        }
+        else {
+            return null;
+        }
+    }
+
+    renderBody() {
+
+        if (this.props.progress >= 2) {
+            return (<div class="body"></div>);
+        }
+        else {
+            return null;
+        }
+    }
+
+    renderLeftArm() {
+        if (this.props.progress >= 3) {
+            return (<div class="leftArm"></div>);
+        }
+        else {
+            return null;
+        }
+    }
+    
+    renderRightArm() {
+        if (this.props.progress >= 4) {
+            return (<div class="rightArm"></div>);
+        }
+        else {
+            return null;
+        }
+    }
+
+    renderLeftLeg() {
+        if (this.props.progress >= 5) {
+            return (<div class="leftLeg"></div>);
+        }
+        else {
+            return null;
+        }
+    }
+
+    renderRightLeg() {
+        if (this.props.progress >= 6) {
+            return (<div class="rightLeg"></div>);
+        }
+        else {
+            return null;
+        }
+    }
+
+    render() {
+        return(
+            <div>
+            <div>{this.renderHead()}</div>
+            <div>{this.renderBody()}</div>
+            <div>{this.renderLeftArm()}</div>
+            <div>{this.renderRightArm()}</div>
+            <div>{this.renderLeftLeg()}</div>
+            <div>{this.renderRightLeg()}</div>
+            </div>
+        );
+    }
+}
+
 class Game extends React.Component {
     constructor(props) {
         super(props);
@@ -130,7 +208,10 @@ class Game extends React.Component {
 
     render() {
         if (this.state.num_correct === this.state.word.length) {
-            alert("GAME OVER");
+            alert("YOU WIN");
+        }
+        if (this.state.num_incorrect === 6) {
+            alert("YOU LOSE");
         }
 
         return(
@@ -138,8 +219,11 @@ class Game extends React.Component {
                 <div>
                     <Keyboard parentClick = {this.handleKeyboardClick.bind(this)}/>
                     <Word word_arr = {this.state.word_arr} />
+                    <div className="Man">
+                        <Man progress={this.state.num_incorrect}/>
+                    </div>
                 </div>
-                
+
                 <div>
                     <div>Num Correct: {this.state.num_correct}</div>
                     <div>Num Incorrect: {this.state.num_incorrect}</div>

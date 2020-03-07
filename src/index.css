@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Man {
+  position:relative;
+  left: 500px;
+  width: 500px;
+  height: 200px;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.body {
+  position: relative;
+  height: 50px;
+  width: 10px;
+  margin-left:20px;
+  bottom: 5px;
+  background-color: #555;
+}
+
+.leftArm {
+  position: relative;
+  height: 8px;
+  width: 35px;
+  margin-left: -10px;
+  bottom: 40px;
+  background-color: #555;
+}
+
+.rightArm {
+  position: relative;
+  height: 8px;
+  width: 35px;
+  left: 23px;
+  bottom: 48px;
+  background-color: #555;
+}
+
+.leftLeg {
+  position: relative;
+  height: 8px;
+  width: 40px;
+  left: -7px;
+  bottom: 16px;
+  background-color: #555;
+  transform: rotate(130deg);
+}
+
+.rightLeg {
+  position: relative;
+  height: 8px;
+  width: 40px;
+  left: 18px;
+  bottom: 23px;
+  background-color: #555;
+  transform: rotate(50deg);
+}
